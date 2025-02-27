@@ -3,14 +3,14 @@ import { View, Text, TextInput, Button, Alert, StyleSheet } from "react-native";
 
 const UserForm = () => {
   // useState to manage input values
-  const [username, setUsername] = useState("");
+  // const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
   // Function to handle form submission
   const handleSubmit = () => {
-    Alert.alert("Form Submitted", `Name: ${username}\nEmail: ${email}\nfirstname: ${firstName}\nlastname: ${lastName}`);
+    Alert.alert("Form Submitted", `Email: ${email}\nfirstname: ${firstName}\nlastname: ${lastName}`);
   };
 
   // function handleSubmit() {
@@ -51,12 +51,12 @@ const UserForm = () => {
 
 
       {/* username */}
-      <TextInput
+      {/* <TextInput
         style={styles.input}
         placeholder="Enter your name"
         value={username}
         onChangeText={(text) => setUsername(text)}
-      />
+      /> */}
 
       {/* Email Input */}
       <TextInput
