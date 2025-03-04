@@ -8,7 +8,9 @@ export default function Layout() {
       <Stack.Screen name="signup" options={{headerShown: false}} />
       <Stack.Screen name="+not-found" options={{headerShown: false}} />
       <Stack.Screen name="(tabs)" options={{headerShown: false}} />
+      <Stack.Screen name="(others)" options={{headerShown: false}} />
 
     </Stack>
   );
 }
+

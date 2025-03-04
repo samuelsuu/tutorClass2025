@@ -25,5 +25,5 @@
     "nativewind-env.d.ts",
     "store/authService.js",
     "type/**/*.d.ts"
-, "content/assets.tsx"  ]
+, "content/assets.tsx", "props/Greet.tsx"  ]
 }
