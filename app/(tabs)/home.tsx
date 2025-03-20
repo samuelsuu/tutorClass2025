@@ -13,6 +13,7 @@ import ActionButton from '@/props/ActionButton'
 import User from '@/maps/User'
 import UserList from '@/maps/UserList'
 import { Href, router } from 'expo-router'
+import Sam from '@/props/Sam'
 
 
 const home = () => {
@@ -45,6 +46,8 @@ const home = () => {
       <TouchableOpacity onPress={() => router.push('/(others)/todo' as Href)}>
         <Text>My Todo</Text>
       </TouchableOpacity>
+
+      <Sam title="Love" age="20"/>
     </ScrollView>
   )
 }

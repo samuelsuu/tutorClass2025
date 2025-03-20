@@ -1,11 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { router, Href } from 'expo-router'
 
 const settings = () => {
   return (
     <SafeAreaView>
-      <Text>settings</Text>
+      <Text>Payment</Text>
+      <TouchableOpacity onPress={() => router.push('/(others)/payment' as Href)}>
+        <Text>Payment</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   )
 }

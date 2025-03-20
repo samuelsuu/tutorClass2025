@@ -24,7 +24,7 @@ export default function Todoy() {
   const addTodo = () => {
     if (!inputText.trim()) return;
     // setTodos([{ id: Date.now().toString(), text: inputText }, ...todos]);
-    setTodos([...todos, {id: Date.now().toString(), text: inputText }])
+    setTodos([...todos, { id: Date.now().toString(), text: inputText }])
     setInputText("");
   };
 
@@ -67,9 +67,11 @@ export default function Todoy() {
           title={editingId ? "Update" : "Add"}
           onPress={editingId ? updateTodo : addTodo}
         />
+
+        {/* <Text>{inputText}</Text> */}
       </View>
-      
-      <FlatList
+
+      {/* <FlatList
         data={todos}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
@@ -90,7 +92,29 @@ export default function Todoy() {
             </View>
           </View>
         )}
-      />
+      /> */}
+
+      <View>
+        {todos.map((todo) => (
+          <View key={todo.id} style={styles.todoItem}>
+            <Text style={styles.todoText}>{todo.text}</Text>
+            <View style={styles.actions}>
+              <TouchableOpacity
+                onPress={() => {
+                  setInputText(todo.text);
+                  setEditingId(todo.id);
+                }}
+              >
+                <Text style={styles.edit}>Edit</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => deleteTodo(todo.id)}>
+                <Text style={styles.delete}>Delete</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+        ))}
+      </View>
     </View>
   );
 }
